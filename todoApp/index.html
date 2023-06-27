@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="task-input">
+            <img src="https://cdn.iconscout.com/icon/free/png-64/free-list-1851187-1569176.png?f=webp" alt="icon">
+            <input type="text" id="inpBox" placeholder="Add a new task">
+            <button onclick="addTask()" id="addBtn" type="submit">Add</button>
+        </div>
+        <div id="error"></div>
+        <ul id="textList">
+        </ul>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
