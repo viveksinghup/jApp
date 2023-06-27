@@ -8,6 +8,10 @@
     <title>JlApp</title>
     <style></style>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             background-color: #7375f8;
             color: #fff;
@@ -19,9 +23,10 @@
             align-items: center;
         }
 
-        .ptitle{
+        .ptitle {
             font-size: 40px;
             font-weight: bold;
+            text-align: center;
             margin-bottom: 40px;
         }
 
@@ -31,7 +36,6 @@
             flex-flow: row wrap;
             justify-content: center;
             gap: 14px;
-            align-items: center;
         }
 
         .app {
@@ -43,15 +47,26 @@
             text-decoration: none;
             border: 3px solid #fff;
             height: 150px;
+            padding: 10px;
             color: #fff;
             font-size: 20px;
             text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .app {
+                height: auto;
+            }
+
+            .ptitle {
+                font-size: 30px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="ptitle">Small JS Learning App</div>
+    <div class="ptitle">JS Learning Apps</div>
     <div class="japp">
         <a class="app" href="/EmpRecord/index.html">Emp Record</a>
         <a class="app" href="/todoApp/index.html">Todo App</a>
