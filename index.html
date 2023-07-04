@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>JlApp</title>
     <style></style>
     <style>
@@ -52,6 +52,9 @@
             font-size: 20px;
             text-align: center;
         }
+        * {
+            touch-action: manipulation;
+        }
 
         @media (max-width: 768px) {
             .app {
@@ -68,10 +71,10 @@
 <body>
     <div class="ptitle">JS Learning Apps</div>
     <div class="japp">
+        <a class="app" href="/LibApp/index.html">Lib App</a>
         <a class="app" href="/EmpRecord/index.html">Emp Record</a>
         <a class="app" href="/todoApp/index.html">Todo App</a>
         <a class="app" href="/counterApp/index.html">Counter App</a>
-        <a class="app" href="/LibApp/index.html">Lib App</a>
     </div>
 </body>
 
