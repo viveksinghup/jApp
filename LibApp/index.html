@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Library App</title>
     <style>
         .formBox {
@@ -20,48 +24,60 @@
 </head>
 
 <body>
-    <div class="container mt-5">
-        <div class="mt-5 p-4 formBox">
+    <div class="container">
+        <div class="p-4 formBox">
             <form id="bookEntry">
                 <div class="row">
                     <div class=" col-2">
                         <div class="form-group">
-                            <label for="uname1" class="text-white">Name</label>
-                            <input class="form-control mt-1" id="inp1" name="uname1" type="text">
+                            <label class="text-white">Name</label>
+                            <input class="form-control mt-1" required id="inp1" name="uname1" type="text">
                         </div>
                     </div>
                     <div class=" col-2">
                         <div class="form-group">
-                            <label class="text-white" for="uname2">Author</label>
-                            <input class="form-control mt-1" id="inp2" name="uname1" type="text">
+                            <label class="text-white">Author</label>
+                            <input class="form-control mt-1" required id="inp2" name="uname1" type="text">
+                        </div>
+                    </div>
+                    <div class=" col-2">
+                        <div class="form-group flex-column d-flex">
+                            <label class="text-white d-block mb-1">Pages</label>
+                            <select id="inp3" required class="w-full h-full p-2 border-0 rounded-2">
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                                <option value="300">300</option>
+                                <option value="400">400</option>
+                                <option value="500">500</option>
+                            </select>
                         </div>
                     </div>
                     <div class=" col-2">
                         <div class="form-group">
-                            <label class="text-white" for="uname3">Pages</label>
-                            <input class="form-control mt-1" id="inp3" name="uname1" type="text">
+                            <label class="text-white">Published</label>
+                            <input class="form-control mt-1" required id="inp4" name="uname1" type="date">
                         </div>
                     </div>
                     <div class=" col-2">
-                        <div class="form-group">
-                            <label class="text-white" for="uname4">Published</label>
-                            <input class="form-control mt-1" id="inp4" name="uname1" type="text">
+                        <div class="form-group flex-column d-flex">
+                            <label class="text-white d-block mb-1">Status</label>
+                            <select id="inp5" required class="w-full h-full p-2 border-0 rounded-2">
+                                <option value="Published">Published</option>
+                                <option value="Not Published">Not Published</option>
+                                <option value="On Hold">On Hold</option>
+                            </select>
                         </div>
                     </div>
                     <div class=" col-2">
-                        <div class="form-group">
-                            <label class="text-white" for="uname5">Status</label>
-                            <input class="form-control mt-1" id="inp5" name="uname1" type="text">
-                        </div>
-                    </div>
-                    <div class=" col-2">
-                        <button class="btn btn-success btn-sm h-100 w-100" id="inp6" onclick="addBookEntry()">Add
+                        <button class="btn btn-success btn-sm h-100 w-100" id="inp6" type="submit">Add
+                            Details</button>
+                        <button class="btn btn-success btn-sm h-100 w-100" id="inp7" type="submit">Update
                             Details</button>
                     </div>
                 </div>
             </form>
         </div>
-        <div class="mt-5">
+        <div class=" mt-5">
             <table class="table table-bordered border-secondary" id="empTable">
                 <thead>
                     <tr>
@@ -74,7 +90,7 @@
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
-                <tbody class="tableData">
+                <tbody id="tableData">
                 </tbody>
             </table>
         </div>
