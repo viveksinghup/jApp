@@ -20,9 +20,11 @@ function updateClock() {
     minute_el.innerText = minute;
     second_el.innerText = second;
     ampm_el.innerText = ampm;
-
+    let sound = new Audio('sound.mp3');
+    
     setTimeout(function(){
         updateClock();
+        sound.play();
     }, 1000)
 }
 updateClock();
